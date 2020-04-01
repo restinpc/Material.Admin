@@ -1,0 +1,60 @@
+/**
+ * Material.App - стили компонента Modal
+ *
+ * @ 14.11.2019 # Aleksandr <Vorkunov.Al.Va@omega.sbrf.ru>
+ */
+
+.Modal{
+    position: fixed;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    background: rgba(0,0,0,0.1);
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 2;
+    width:100%;
+    height: 100%;
+}
+
+.Modal .modal-wrapper{
+    display: table;
+    text-align: center;
+    vertical-align: middle;
+    width: calc(100% - 40px);
+    height: 100%;
+    margin: 0px auto;
+    max-width: 420px;
+}
+
+.Modal .modal-container{
+    width: 100%;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.Modal .modal-data{
+    background: #fff;
+    border-radius: 10px;
+    display: block;
+    border: #ddd 1px solid;
+    text-align: left;
+}
+
+.Modal .modal-data h1{
+    font-size: 23px;
+    margin: 25px;
+}
+
+.Modal .icon{
+    font-size:24px;
+    margin:20px;
+    cursor:pointer;
+    float:right;
+}
+
+.Modal .modal-data .icon{
+    font-size: 38px !important;
+}

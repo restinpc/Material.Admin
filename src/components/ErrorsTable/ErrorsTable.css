@@ -1,0 +1,52 @@
+/**
+ * Material.App - ErrorsTable stylesheets.
+ *
+ * @ 19.12.2019 # Aleksandr <Vorkunov.Al.Va@omega.sbrf.ru>
+ */
+
+.ErrorsTable .center{
+    margin: 0px auto !important;
+}
+
+.ErrorsTable .icon{
+    font-size:24px;
+    padding:10px;
+    cursor:pointer;
+}
+
+.ErrorsTable .emptyState{
+    font-size:48px;
+    padding:10px;
+}
+
+.ErrorsTable thead th{
+    text-align: center;
+}
+
+.ErrorsTable tbody td{
+    text-align: left !important;
+}
+
+.ErrorsTable .searchInput{
+    padding: 5px;
+    margin-left: 15px;
+    margin-top: -100px;
+    margin-bottom: 25px;
+    width: 40%;
+    max-width: 310px;
+    float: right
+}
+
+.ErrorsTable .schedule{
+    float: left;
+    margin-right: 10px;
+    padding-left: 0px;
+}
+
+.ErrorsTable .card-plain{
+    margin-bottom: 0px;
+}
+
+.ErrorsTable .notFound{
+    text-align: center;
+}

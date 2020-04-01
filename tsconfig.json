@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "jsx": "react",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "lib": ["es6", "dom"],
+    "rootDir": "src",
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true
+  },
+  "files": [
+    "./node_modules/@types/react/index.d.ts",
+    "./src/react-app-env.d.ts"
+  ],
+  "exclude": [
+    ".idea",
+    "build",
+    "config",
+    "node_modules",
+    "public",
+    "scripts"
+  ]
+}

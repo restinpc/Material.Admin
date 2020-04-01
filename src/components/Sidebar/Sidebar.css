@@ -1,0 +1,14 @@
+/**
+ * Material.App - стили компонента Sidebar
+ *
+ * @ 17.12.2019 # Aleksandr <Vorkunov.Al.Va@omega.sbrf.ru>
+ */
+
+.sidebar .logo{
+    height: 77px;
+    padding: 20px;
+}
+
+.sidebar .logo{
+    padding-top: 20px !important;
+}

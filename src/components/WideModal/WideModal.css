@@ -1,0 +1,168 @@
+/**
+ * Material.App - стили компонента WideModal
+ *
+ * @ 04.12.2019 # Aleksandr <Vorkunov.Al.Va@omega.sbrf.ru>
+ */
+
+.WideModal{
+    position: fixed;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    background: rgba(0,0,0,0.1);
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 2;
+    width:100%;
+    height: 100%;
+}
+
+.WideModal .WideModal-wrapper{
+    text-align: center;
+    vertical-align: middle;
+    position: fixed;
+    top: 30px;
+    bottom: 30px;
+    right: 30px;
+    left: 30px;
+    background: #fff;
+    border-radius: 10px;
+    display: block;
+    border: #ddd 1px solid;
+}
+
+.WideModal .WideModal-data{
+    text-align: left;
+    height: calc(100% - 40px);
+    margin: 20px;
+}
+
+.WideModal .WideModal-data h1{
+    font-size: 24px;
+    margin: 25px;
+}
+
+.WideModal .icon{
+    font-size:38px;
+    margin:20px;
+    cursor:pointer;
+    float:right;
+}
+
+.WideModal .processDetails{
+    height: 100%;
+}
+
+.WideModal .processDetailsHeader{
+    display: table;
+    padding: 10px;
+    paddingLeft: 10px;
+}
+
+.WideModal .processDetailsProcessId{
+    display: table-cell;
+}
+
+.WideModal .processDetailsTaskName{
+    display: table-cell;
+    padding-left: 30px;
+}
+
+.WideModal .processDetailsSummary{
+    width:100%;
+    margin-bottom:5px;
+    border:#c0c0c0 1px solid;
+    border-radius:5px;
+    margin-top:20px;
+    padding: 20px;
+}
+
+.WideModal .processDetailsSummaryCaption{
+    padding: 5px;
+    background: #fff;
+    display: table;
+    text-align: center;
+    margin-top: -35px;
+}
+
+.WideModal .processDetailsSummaryBody{
+    display: table;
+    padding-left: 2px;
+    padding-top: 5px;
+}
+
+.WideModal .processDetailsSummaryTime{
+    display: table-cell;
+}
+
+.WideModal .processDetailsSummaryStatus{
+    display: table-cell;
+    padding-left: 30px;
+}
+
+.WideModal .processDetailsTabs{
+    display: table;
+}
+
+.WideModal .processDetailsTab{
+    padding: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    cursor: pointer;
+    display: table-cell;
+}
+
+.WideModal .processDetailsData{
+    overflow: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    margin-bottom: 20px;
+    border: #c0c0c0 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: -4px;
+}
+
+.WideModal .selectedTab{
+    border-bottom: #42d0ed 4px solid;
+}
+
+.WideModal .processDetailsFooter{
+    height: 40px;
+}
+
+.WideModal .processDetailsStop{
+    margin-right: 15px;
+}
+
+.WideModal .processDetailsClose{
+    float:right;
+}
+
+.WideModal .settingsBlock{
+    border: #c0c0c0 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+    padding-bottom: 12px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.WideModal .settingsBlockCaption{
+    display: table;
+    padding: 7px;
+    background: #fff;
+    margin-top: -28px;
+}
+
+.WideModal .settingsBlockBody{
+    line-height: 2.0;
+    padding-left: 5px;
+}
+
+.WideModal .settingsBlockInput{
+    width: calc(100% - 5px);
+    margin-bottom: 5px;
+}

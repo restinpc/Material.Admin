@@ -1,0 +1,23 @@
+/**
+ * Material.App - ErrorList stylesheets.
+ *
+ * @ 19.12.2019 # Aleksandr <Vorkunov.Al.Va@omega.sbrf.ru>
+ */
+
+.Icons{
+    padding: 10px;
+}
+
+.Icons .font-icon-detail{
+    text-align: center;
+    padding: 10px;
+}
+
+.Icons i{
+    font-size: 64px;
+    padding-bottom: 10px;
+}
+
+.Icons input{
+    width: 100%;
+}

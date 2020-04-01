@@ -1,0 +1,52 @@
+/**
+ * Material.App - styling of Card component
+ *
+ * @ 19.12.2019 # Aleksandr <Vorkunov.Al.Va@omega.sbrf.ru>
+ */
+
+.card{
+    line-height: 1.0;
+    box-shadow: none;
+    transition: all 150ms ease-in;
+    min-width: 225px;
+}
+
+.card .header h4{
+    line-height: 2.0;
+}
+
+.card .header p{
+    line-height: 1.5;
+    padding-bottom: 20px;
+}
+
+.card .numbers{
+    color: #333;
+    font-size: 22px !important;
+    font-width: 300;
+    font-family: "Arial Narrow";
+}
+
+.card .numbers p{
+    padding-top: 0px;
+    color: #333;
+    font-size: 14px;
+    padding-bottom: 15px;
+}
+
+.card .table td{
+    text-align: left;
+}
+
+.card .content{
+    border: 0px solid !important;
+}
+
+.card .category{
+    padding-top: 10px;
+}
+
+.card .svg_block{
+    padding:10px;
+    height:40px;
+}

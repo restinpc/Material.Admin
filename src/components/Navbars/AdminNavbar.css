@@ -1,0 +1,15 @@
+/**
+ * Material.App - стили компонента AdminNavbar
+ *
+ * @ 04.12.2019 # Aleksandr <Vorkunov.Al.Va@omega.sbrf.ru>
+ */
+
+.AdminNavbar{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.AdminNavbar .navbar-brand{
+    padding-left: 25px !important;
+    padding-right: 20px !important;
+}

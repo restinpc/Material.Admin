@@ -1,0 +1,29 @@
+{
+  "success": true,
+  "payLoad": {
+    "list": [
+      {
+        "text": "Sign contract for \"What are conference organizers afraid of?\"",
+        "checked": false
+      },
+      {
+        "text": "Lines From Great Russian Literature? Or E-mails From My Boss?",
+        "checked": true
+      },
+      {
+        "text": "Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroi",
+        "checked": false
+      },
+      {
+        "text": "Create 4 Invisible User Experiences you Never Knew About",
+        "checked": false
+      },
+      {
+        "text": "Read \"Following makes Medium better\"",
+        "checked": true
+      }
+    ]
+  },
+  "date": 10000000,
+  "error": null
+}

@@ -1,0 +1,65 @@
+/**
+ * Material.App - Application primary stylesheets.
+ *
+ * @ 19.12.2019 # Aleksandr <Vorkunov.Al.Va@omega.sbrf.ru>
+ */
+
+input, textarea, select{
+    border-radius: 3px;
+    border: #c0c0c0 1px solid;
+    padding: 3px;
+    padding-left: 4px;
+    font-family: Tahoma;
+    color: #333;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+    border: #42d0ed 1px solid;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder,
+select::-moz-placeholder {
+    color: #c0c0c0;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder,
+select:-moz-placeholder {
+    color: #c0c0c0;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
+    color: #c0c0c0;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder,
+select:-ms-input-placeholder {
+    color: #c0c0c0;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.link{
+    color: #3bc6ca;
+    cursor: pointer;
+}
+
+.main-panel{
+    background: linear-gradient(90deg, rgb(238, 238, 238), rgb(204, 204, 204)) !important;
+}
+
+.spinner{
+    text-align: center;
+}

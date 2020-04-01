@@ -1,0 +1,117 @@
+/**
+ * Material.App - стили компонента RightModal
+ *
+ * @ 15.11.2019 # Aleksandr <Vorkunov.Al.Va@omega.sbrf.ru>
+ */
+
+.modalBackground{
+    background: rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 2;
+}
+
+.RightModal{
+    background: #fff;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.05), 0px 0px 0px 1px rgba(63,63,68,0.1);
+    overflow: hidden;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    left: calc(50% + 65px);
+    z-index: 3;
+}
+
+.RightModal .header{
+    background: linear-gradient(135deg, rgb(135, 186, 229), rgb(59, 198, 202));
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.RightModal .modal_content{
+    text-align: center;
+    width: 100%;
+}
+
+.RightModal .property{
+    border: #c0c0c0 1px solid;
+    text-align: left;
+    padding: 20px;
+    margin: 20px;
+    margin-top: 30px;
+    border-radius: 7px;
+}
+
+.RightModal .property_name{
+    padding: 10px;
+    background: #fff;
+    margin-top: -40px;
+    display: table;
+}
+
+.RightModal .property_details{
+    padding: 10px;
+}
+
+.RightModal .required{
+    color: #e11;
+    padding: 3px;
+    font-weight: bold;
+}
+
+.RightModal .backToDefault{
+    width: 30px;
+    padding: 2px;
+    margin-top: -3px;
+    margin-left: 2px;
+}
+
+.RightModal .backToDefault i{
+    font-weight: bold;
+}
+
+.RightModal .withoutButton{
+    width: 100%;
+}
+
+.RightModal .withButton{
+    width: calc(100% - 32px);
+}
+
+.RightModal .tabs{
+    display: table;
+}
+
+.RightModal .tab{
+    display: table-cell;
+    padding: 10px;
+    padding-top: 12px;
+    padding-right: 25px;
+    padding-left: 25px;
+    cursor: pointer;
+}
+
+.RightModal .choosen{
+    border-bottom: #42d0ed 4px solid;
+}
+
+.RightModal .modal_details{
+    border-top: #c0c0c0 1px solid;
+    border-bottom: #c0c0c0 1px solid;
+    padding: 5px;
+    overflow: hidden;
+    overflow-y:auto;
+    margin-bottom: 15px;
+    height: calc(100% - 182px);
+    margin-top: -1px;
+}
+
+.RightModal .saveButton{
+    margin-left: 15px;
+    margin-right: 15px;
+}

@@ -1,0 +1,28 @@
+/**
+ * Material.App - стили компонента StatsCard
+ *
+ * @ 09.12.2019 # Aleksandr <Vorkunov.Al.Va@omega.sbrf.ru>
+ */
+
+.has-border{
+    border: #ddd 1px solid;
+    box-shadow: none !important;
+}
+
+.has-border:hover{
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.1), 0px 0px 0px 1px rgba(200,200,200,0.1) !important;
+}
+
+.card .icon-big{
+    background: linear-gradient(135deg, #333, #666);
+    width: 65px;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 28px !important;
+    border: rgba(0,0,0,0.1) 1px solid;
+}
+
+.card .icon-big i{
+    font-weight: normal !important;
+}
