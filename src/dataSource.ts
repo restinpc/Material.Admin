@@ -24,7 +24,7 @@ export default class DataSource {
     timeout: number;
     //------------------------------------------------------------------------------------------------------------------
     constructor(url: string, store: Store, loader: AppLoader) {
-        document.handler.log("DataSource.constructor()");
+        document["handler"].log("DataSource.constructor()");
         this.url = url;
         this.store = store;
         this.loader = loader;
@@ -34,12 +34,12 @@ export default class DataSource {
         this.requeryCount = parseInt(process.env.REACT_APP_REQUERY_COUNT);
         if(!this.requeryCount) this.requeryCount = 1;
         this.timeout = parseInt(process.env.REACT_APP_REQUEST_TIMEOUT)*1000;
-        document.dataSource = this;
+        document["dataSource"] = this;
     }
     //------------------------------------------------------------------------------------------------------------------
     submitRequest(url:string, method:string, body:any, func:(func:any)=>void): Promise<string|void>{
         return new Promise((callback) => {
-            document.handler.log("DataSource.submitRequest()");
+            document["handler"].log("DataSource.submitRequest()");
             try {
                 let xhr = new XMLHttpRequest();
                 xhr.open(method, this.url + url, true);
@@ -51,12 +51,12 @@ export default class DataSource {
                         return false;
                     }
                     if (xhr.status !== 200) {
-                        document.handler.error("dataSource.submitRequest().xhr(" + this.errorState + ") -> " + xhr.statusText);
+                        document["handler"].error("dataSource.submitRequest().xhr(" + this.errorState + ") -> " + xhr.statusText);
                         if (++this.errorState < this.requeryCount) {
                             this.submitRequest(url, method, body, func).then(() => callback(null));
                         } else {
-                            document.handler.error(xhr.responseText);
-                            document.handler.throw();
+                            document["handler"].error(xhr.responseText);
+                            document["handler"].throw();
                         }
                     } else {
                         this.errorState = 0;
@@ -64,21 +64,21 @@ export default class DataSource {
                     }
                 };
             }catch(e){
-                document.handler.error("DataSource.submitRequest() -> "+e.message);
+                document["handler"].error("DataSource.submitRequest() -> "+e.message);
             }
         }).then(xhr=>func(xhr));
     }
     //------------------------------------------------------------------------------------------------------------------
     initData(): Promise<boolean> {
-        document.handler.info("Connecting to "+this.url);
+        document["handler"].info("Connecting to "+this.url);
         return new Promise((callback) => {
-            document.handler.log("dataSource.initData()");
+            document["handler"].log("dataSource.initData()");
             try {
                 this.submitRequest("data.json", "GET", null, (response) => {
-                    document.handler.info("Connected!");
+                    document["handler"].info("Connected!");
                     if (response != null) {
-                        document.handler.log("dataSource.initData().submitRequest <<");
-                        document.handler.log(response);
+                        document["handler"].log("dataSource.initData().submitRequest <<");
+                        document["handler"].log(response);
                         this.data = JSON.parse(response);
                         if( this.data &&
                             this.data.payLoad &&
@@ -100,7 +100,7 @@ export default class DataSource {
                             callback(false);
                         }
                     }else{
-                        document.handler.log("dataSource.initData().submitRequest << null");
+                        document["handler"].log("dataSource.initData().submitRequest << null");
                         this.store.dispatch(addError({
                             code: 0,
                             message: "При инициализации приложения произошла ошибка",
@@ -112,7 +112,7 @@ export default class DataSource {
                     }
                 });
             }catch(e){
-                document.handler.error("DataSource.initData() -> "+e.message);
+                document["handler"].error("DataSource.initData() -> "+e.message);
             }
         });
     }

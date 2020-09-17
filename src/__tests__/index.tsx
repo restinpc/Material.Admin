@@ -32,12 +32,12 @@ test("application", () => {
     // @ts-ignore
     expect(() => {
         new ErrorHandler(rootComponent);
-        document.reduxStore = ReduxStore();
+        document["reduxStore"] = ReduxStore();
         history = createBrowserHistory();
         appLoader = new AppLoader();
         new DataSource(
             process.env.REACT_APP_API_URL,
-            document.reduxStore,
+            document["reduxStore"],
             appLoader
         );
         window.addEventListener("load", () => {
@@ -50,10 +50,10 @@ test("application", () => {
 //----------------------------------------------------------------------------------------------------------------------
 // @ts-ignore
 test("root render", () => {
-    document.dataSource.initData().then((success) => {
+    document["dataSource"].initData().then((success) => {
         ReactDOM.render(
             <div id="react">
-                <Provider store={document.reduxStore}>
+                <Provider store={document["reduxStore"]}>
                     <Router history={history}>
                         <Switch>
                             <Route path={process.env.REACT_APP_ROOT} render={props => <App {...props} />}/>
@@ -70,7 +70,7 @@ test("root render", () => {
 test("rounts", () => {
     const snapshot = renderer.create(
         <div id="react">
-            <Provider store={document.reduxStore}>
+            <Provider store={document["reduxStore"]}>
                 <Router history={history}>
                     <Switch>
                         <Route path={process.env.REACT_APP_ROOT} render={props => <App {...props} />}/>

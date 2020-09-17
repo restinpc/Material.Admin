@@ -30,17 +30,17 @@ class DashboardComponent extends React.PureComponent<IDashboardProps>{
     //------------------------------------------------------------------------------------------------------------------
     constructor(props){
         super(props);
-        document.handler.log("DashboardComponent.constructor()");
+        document["handler"].log("DashboardComponent.constructor()");
         this.renderId = 0;
     }
     //------------------------------------------------------------------------------------------------------------------
     componentDidMount(){
-        document.handler.log("DashboardComponent.componentDidMount()");
+        document["handler"].log("DashboardComponent.componentDidMount()");
         setTimeout(()=>{this.props.updateParent(true)}, 0);
     }
     //------------------------------------------------------------------------------------------------------------------
     componentWillUnmount() {
-        document.handler.log("DashboardComponent.componentWillUnmount()");
+        document["handler"].log("DashboardComponent.componentWillUnmount()");
         this.props.updateParent(false);
     }
     //------------------------------------------------------------------------------------------------------------------
@@ -93,7 +93,7 @@ class DashboardComponent extends React.PureComponent<IDashboardProps>{
     }
     //------------------------------------------------------------------------------------------------------------------
     render() {
-        document.handler.log("DashboardComponent.render() №"+(++this.renderId));
+        document["handler"].log("DashboardComponent.render() №"+(++this.renderId));
         return (
             <div className="content dashboard">
                 <Grid fluid>

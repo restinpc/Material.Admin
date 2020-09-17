@@ -21,9 +21,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         saveTaskDetails: (action:string, obj:any) => {
-            return document.dataSource.saveTaskDetails(action, obj).then( (success) => {
+            return document["dataSource"].saveTaskDetails(action, obj).then( (success) => {
                 if (success) {
-                    document.dataSource.getTasks().then((result) => {
+                    document["dataSource"].getTasks().then((result) => {
                         if(result) {
                             dispatch(
                                 actions.hideRightModal()

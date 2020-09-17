@@ -8,7 +8,7 @@ import * as React from "react";
 import { NavItem, Nav, NavDropdown, MenuItem } from "react-bootstrap";
 
 const AdminNavbarLinks: React.FunctionComponent = () => {
-    document.handler.log("AdminNavbarLinks.render()");
+    document["handler"].log("AdminNavbarLinks.render()");
     const notification = (
         <div>
             <i className="fa fa-globe" />

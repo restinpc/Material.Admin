@@ -11,32 +11,32 @@ class errorHandler{
     constructor(rootComponent:string){
         this.rootComponent = rootComponent;
         this.errorState = false;
-        document.traceStack = [];
-        document.handler = this;
+        document["traceStack"] = [];
+        document["handler"] = this;
     }
     //------------------------------------------------------------------------------------------------------------------
     log(text:string|object){
-        document.traceStack.push(new Date().toLocaleString()+" $ "+JSON.stringify(text));
+        document["traceStack"].push(new Date().toLocaleString()+" $ "+JSON.stringify(text));
         if(process.env.NODE_ENV !== "test") console.log(text);
     }
     //------------------------------------------------------------------------------------------------------------------
     info(text:string|object){
-        document.traceStack.push(new Date().toLocaleString()+" @ "+JSON.stringify(text));
+        document["traceStack"].push(new Date().toLocaleString()+" @ "+JSON.stringify(text));
         if(process.env.NODE_ENV !== "test") console.info(text);
     }
     //------------------------------------------------------------------------------------------------------------------
     warn(text:string|object){
-        document.traceStack.push(new Date().toLocaleString()+" ! "+JSON.stringify(text));
+        document["traceStack"].push(new Date().toLocaleString()+" ! "+JSON.stringify(text));
         if(process.env.NODE_ENV !== "test") console.warn(text);
     }
     //------------------------------------------------------------------------------------------------------------------
     debug(text:string|object){
-        document.traceStack.push(new Date().toLocaleString+" ~ "+JSON.stringify(text));
+        document["traceStack"].push(new Date().toLocaleString+" ~ "+JSON.stringify(text));
         if(process.env.NODE_ENV !== "test") console.debug(text);
     }
     //------------------------------------------------------------------------------------------------------------------
     error(text:string|object){
-        document.traceStack.push(new Date().toLocaleString()+" # "+JSON.stringify(text));
+        document["traceStack"].push(new Date().toLocaleString()+" # "+JSON.stringify(text));
         if(process.env.NODE_ENV !== "test") console.error(text);
     }
     //------------------------------------------------------------------------------------------------------------------
@@ -61,7 +61,7 @@ class errorHandler{
             this.errorState = true;
             try {
                 let body = "";
-                document.traceStack.forEach(item => {
+                document["traceStack"].forEach(item => {
                     body += item.replace(/"/g, '') + "\n";
                 });
                 let xhr = new XMLHttpRequest();

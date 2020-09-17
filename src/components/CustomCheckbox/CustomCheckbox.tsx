@@ -8,7 +8,7 @@ import * as React from "react";
 import {ICustomCheckboxProps} from "./CustomCheckbox.interface";
 
 const CustomCheckbox: React.FunctionComponent<ICustomCheckboxProps> = (props) => {
-    document.handler.log("CustomCheckbox.render()");
+    document["handler"].log("CustomCheckbox.render()");
     const { isChecked, number, label, inline, className, ...rest } = props;
     const classes = inline !== undefined ? "checkbox checkbox-inline "+className : "checkbox "+className;
     return (

@@ -7,9 +7,9 @@
 import * as React from "react";
 
 const showSuccess = (text:string) => {
-    document.handler.log("showSuccess()");
+    document["handler"].log("showSuccess()");
     try {
-        document.reduxStore.getState().main.addNotification({
+        document["reduxStore"].getState().main.addNotification({
             title: <span data-notify="icon" className="pe-7s-info" />,
             message: <div> {text} </div>,
             level: "success",
@@ -17,7 +17,7 @@ const showSuccess = (text:string) => {
             autoDismiss: 3
         });
     }catch(e){
-        document.handler.error("showSuccess() -> "+e.message);
+        document["handler"].error("showSuccess() -> "+e.message);
     }
 }
 

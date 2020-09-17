@@ -15,26 +15,26 @@ class WideModal extends React.PureComponent<IWideModalProps>{
     //------------------------------------------------------------------------------------------------------------------
     constructor(props){
         super(props);
-        document.handler.log("WideModal.constructor()");
+        document["handler"].log("WideModal.constructor()");
         this.renderId = 0;
     }
     //------------------------------------------------------------------------------------------------------------------
     componentDidMount(){
-        document.handler.log("WideModal.componentDidMount()");
+        document["handler"].log("WideModal.componentDidMount()");
     }
     //------------------------------------------------------------------------------------------------------------------
     componentWillUnmount() {
-        document.handler.log("WideModal.componentWillUnmount()");
+        document["handler"].log("WideModal.componentWillUnmount()");
     }
     //------------------------------------------------------------------------------------------------------------------
     render(){
-        document.handler.log("WideModal.render() №"+(++this.renderId));
+        document["handler"].log("WideModal.render() №"+(++this.renderId));
         return (
             <div className="WideModal">
                 <div className="WideModal-wrapper">
                     <i className="pe-7s-close icon" title="Закрыть окно"
                        onClick={() => {
-                           document.handler.info("WideModal.icon(Закрыть окно).click()");
+                           document["handler"].info("WideModal.icon(Закрыть окно).click()");
                            this.props.hideWideModal();
                        }}
                     />

@@ -8,7 +8,7 @@ import * as React from "react";
 import {ICustomRadioProps} from "./CustomRadio.interface";
 
 const CustomRadio: React.FunctionComponent<ICustomRadioProps> = (props) => {
-    document.handler.log("CustomRadio.render()");
+    document["handler"].log("CustomRadio.render()");
     const { number, label, option, name, ...rest } = props;
     return (
         <div className="radio">

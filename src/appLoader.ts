@@ -12,19 +12,19 @@ class AppLoader {
     timeout: number;
     //------------------------------------------------------------------------------------------------------------------
     constructor() {
-        document.handler.log("AppLoader.constructor()");
+        document["handler"].log("AppLoader.constructor()");
         this.load_state = 0;
         this.target_state = 2;
         this.root_opacity = 0.0;
         this.load_interval = null;
         this.timeout = window.setTimeout(() => {
-            document.handler.error("AppLoader.constructor() -> Connection timeout");
-            document.handler.throw();
+            document["handler"].error("AppLoader.constructor() -> Connection timeout");
+            document["handler"].throw();
         }, 10000);
     }
     //------------------------------------------------------------------------------------------------------------------
     load(sender) {
-        document.handler.log("AppLoader.load("+sender+")");
+        document["handler"].log("AppLoader.load("+sender+")");
         try {
             if (this.load_state < this.target_state) {
                 this.load_state++;
@@ -46,7 +46,7 @@ class AppLoader {
                 }
             }
         }catch(e){
-            document.handler.error("AppLoader.load() -> "+e.message);
+            document["handler"].error("AppLoader.load() -> "+e.message);
         }
     }
 }

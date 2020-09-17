@@ -16,22 +16,22 @@ class Icons extends React.PureComponent<IIconsProps> {
     //------------------------------------------------------------------------------------------------------------------
     constructor(props){
         super(props);
-        document.handler.log("Icons.constructor()");
+        document["handler"].log("Icons.constructor()");
         this.renderId = 0;
     }
     //------------------------------------------------------------------------------------------------------------------
     componentDidMount(){
-        document.handler.log("Icons.componentDidMount()");
+        document["handler"].log("Icons.componentDidMount()");
         setTimeout(()=>{this.props.updateParent(true)}, 0);
     }
     //------------------------------------------------------------------------------------------------------------------
     componentWillUnmount() {
-        document.handler.log("Icons.componentWillUnmount()");
+        document["handler"].log("Icons.componentWillUnmount()");
         this.props.updateParent(false);
     }
     //------------------------------------------------------------------------------------------------------------------
     render() {
-        document.handler.log("Icons.render() №"+(++this.renderId));
+        document["handler"].log("Icons.render() №"+(++this.renderId));
         return (
             <div className="content">
                 <Grid fluid>

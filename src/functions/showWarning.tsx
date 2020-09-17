@@ -8,9 +8,9 @@ import * as React from "react";
 import { NavLink } from "react-router-dom";
 
 const showWarning = (text:string) => {
-    document.handler.log("showWarning()");
+    document["handler"].log("showWarning()");
     try {
-        document.reduxStore.getState().main.addNotification({
+        document["reduxStore"].getState().main.addNotification({
             title: <span data-notify="icon" className="pe-7s-attention" />,
             message: (
                 <div>
@@ -23,7 +23,7 @@ const showWarning = (text:string) => {
             autoDismiss: 0,
         });
     }catch(e){
-        document.handler.error("showWarning() -> "+e.message);
+        document["handler"].error("showWarning() -> "+e.message);
     }
 }
 

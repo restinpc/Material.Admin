@@ -10,7 +10,7 @@ import cx from "classnames";
 import {ICustomButtonProps} from "./CustomButton.interface";
 
 const CustomButton: React.FunctionComponent<ICustomButtonProps> = (props) => {
-    document.handler.log("CustomButton.render()");
+    document["handler"].log("CustomButton.render()");
     const { fill, simple, pullRight, round, block, ...rest } = props;
     const btnClasses = cx({
         "btn-fill": fill,

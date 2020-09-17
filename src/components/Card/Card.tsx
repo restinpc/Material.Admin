@@ -9,7 +9,7 @@ import {ICardProps} from "./Card.interface";
 import "./Card.css";
 
 const Card: React.FunctionComponent<ICardProps> = (props) => {
-    document.handler.log("Card.render()");
+    document["handler"].log("Card.render()");
     return (
       <div className={"card" + (props.plain ? " card-plain" : "")}>
         <div className={"header" + (props.hCenter ? " text-center" : "")}>

@@ -7,9 +7,9 @@
 import * as React from "react";
 
 const showMessage = (text:string) => {
-    document.handler.log("showMessage()");
+    document["handler"].log("showMessage()");
     try {
-        document.reduxStore.getState().main.addNotification({
+        document["reduxStore"].getState().main.addNotification({
             title: <span data-notify="icon" className="pe-7s-info" />,
             message: <div> {text} </div>,
             level: "info",
@@ -17,7 +17,7 @@ const showMessage = (text:string) => {
             autoDismiss: 3,
         });
     }catch(e){
-        document.handler.error("showMessage() -> "+e.message);
+        document["handler"].error("showMessage() -> "+e.message);
     }
 }
 

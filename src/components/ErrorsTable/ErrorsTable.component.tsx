@@ -16,7 +16,7 @@ class ErrorsTableComponent extends React.Component<IErrorsTableProps>{
     //------------------------------------------------------------------------------------------------------------------
     constructor(props) {
         super(props);
-        document.handler.log("ErrorsTableComponent.constructor()");
+        document["handler"].log("ErrorsTableComponent.constructor()");
         this.renderId = 0;
         this.tableHead = {
             date: "Date",
@@ -27,15 +27,15 @@ class ErrorsTableComponent extends React.Component<IErrorsTableProps>{
     }
     //------------------------------------------------------------------------------------------------------------------
     componentDidMount() {
-        document.handler.log("ErrorsTableComponent.componentDidMount()");
+        document["handler"].log("ErrorsTableComponent.componentDidMount()");
     }
     //------------------------------------------------------------------------------------------------------------------
     componentWillUnmount() {
-        document.handler.log("ErrorsTableComponent.componentWillUnmount()");
+        document["handler"].log("ErrorsTableComponent.componentWillUnmount()");
     }
     //------------------------------------------------------------------------------------------------------------------
     print(){
-        document.handler.log("ErrorsTableComponent.print()");
+        document["handler"].log("ErrorsTableComponent.print()");
         let fout = [];
         this.props.errors &&
         this.props.errors.length &&
@@ -55,7 +55,7 @@ class ErrorsTableComponent extends React.Component<IErrorsTableProps>{
     }
     //------------------------------------------------------------------------------------------------------------------
     render(){
-        document.handler.log("ErrorsTableComponent.render() №"+(++this.renderId));
+        document["handler"].log("ErrorsTableComponent.render() №"+(++this.renderId));
         let tHead = [];
         let body = this.print();
         for (let thKey in this.tableHead) {
@@ -69,7 +69,7 @@ class ErrorsTableComponent extends React.Component<IErrorsTableProps>{
             }
             tHead.push(
                 <th key={thKey}><span className="link" onClick={() => {
-                    document.handler.info("ErrorsTableComponent.th("+this.tableHead[thKey]+").click(method="+!(this.props.sortMethod)+")");
+                    document["handler"].info("ErrorsTableComponent.th("+this.tableHead[thKey]+").click(method="+!(this.props.sortMethod)+")");
                     this.props.sort(thKey, !(this.props.sortMethod));
                 }}>{this.tableHead[thKey]}</span>{arrow}</th>
             )
@@ -92,7 +92,7 @@ class ErrorsTableComponent extends React.Component<IErrorsTableProps>{
                                         className="searchInput"
                                         value={ this.props.searchErrorsPhrase }
                                         onChange={(e) => {
-                                            document.handler.info("ErrorsTableComponent.input(Search).change("+e.target.value+")");
+                                            document["handler"].info("ErrorsTableComponent.input(Search).change("+e.target.value+")");
                                             this.props.search(e.target.value);
                                         }} />
                                     <br/>

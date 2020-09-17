@@ -27,7 +27,7 @@ class AppComponent extends React.Component<IAdminProps, IAdminState>{
     //------------------------------------------------------------------------------------------------------------------
     constructor(props) {
         super(props);
-        document.handler.log("AppComponent.constructor()");
+        document["handler"].log("AppComponent.constructor()");
         this.renderId = 0;
         this.state = {
             color: "white",
@@ -44,7 +44,7 @@ class AppComponent extends React.Component<IAdminProps, IAdminState>{
     }
     //------------------------------------------------------------------------------------------------------------------
     componentDidMount(){
-        document.handler.log("AppComponent.componentDidMount()");
+        document["handler"].log("AppComponent.componentDidMount()");
         // @ts-ignore
         this.props.initNotificationSystem(this.refs.notificationSystem.addNotification);
         this.forceUpdate();
@@ -53,17 +53,17 @@ class AppComponent extends React.Component<IAdminProps, IAdminState>{
     }
     //------------------------------------------------------------------------------------------------------------------
     componentWillUnmount() {
-        document.handler.log("AppComponent.componentWillUnmount()");
+        document["handler"].log("AppComponent.componentWillUnmount()");
         window.onresize = null;
         //window.onscroll = null;
     }
     //------------------------------------------------------------------------------------------------------------------
     componentDidCatch(error, errorInfo){
-        document.handler.error(error.toString()+' -> '+errorInfo.toString());
+        document["handler"].error(error.toString()+' -> '+errorInfo.toString());
     }
     //------------------------------------------------------------------------------------------------------------------
     getRoutes = routes => {
-        document.handler.log("AppComponent.getRoutes()");
+        document["handler"].log("AppComponent.getRoutes()");
         let minHeight = "100%";
         if(this.sidebarRef && this.sidebarRef.current && this.sidebarRef.current.clientHeight){
             minHeight = (this.sidebarRef.current.clientHeight-83)+"px";
@@ -95,7 +95,7 @@ class AppComponent extends React.Component<IAdminProps, IAdminState>{
     };
     //------------------------------------------------------------------------------------------------------------------
     getBrandText = path => {
-        document.handler.log("AppComponent.getBrandText()");
+        document["handler"].log("AppComponent.getBrandText()");
         for (let i = 0; i < routes.length; i++) {
             if (
                 this.props.location &&
@@ -108,11 +108,11 @@ class AppComponent extends React.Component<IAdminProps, IAdminState>{
                 return routes[i].name;
             }
         }
-        document.handler.throw();
+        document["handler"].throw();
     };
     //------------------------------------------------------------------------------------------------------------------
     componentDidUpdate(e) {
-        document.handler.log("AppComponent.componentDidUpdate("+e.history.action+")");
+        document["handler"].log("AppComponent.componentDidUpdate("+e.history.action+")");
         try {
             if (
                 window.innerWidth < 993 &&
@@ -131,12 +131,12 @@ class AppComponent extends React.Component<IAdminProps, IAdminState>{
                 this.mainPanelRef.scrollTop = 0;
             }
         }catch(e){
-            document.handler.log("AppComponent.componentDidUpdate -> "+e.message);
+            document["handler"].log("AppComponent.componentDidUpdate -> "+e.message);
         }
     }
     //------------------------------------------------------------------------------------------------------------------
     render() {
-        document.handler.log("AppComponent.render() №"+(++this.renderId));
+        document["handler"].log("AppComponent.render() №"+(++this.renderId));
         let minHeight;
         if(this.sidebarRef && this.sidebarRef.current && this.sidebarRef.current.clientHeight){
             minHeight = (this.sidebarRef.current.clientHeight);

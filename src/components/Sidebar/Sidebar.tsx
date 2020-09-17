@@ -22,7 +22,7 @@ class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
     //------------------------------------------------------------------------------------------------------------------
     constructor(props) {
         super(props);
-        document.handler.log("Sidebar.constructor()");
+        document["handler"].log("Sidebar.constructor()");
         this.state = {
             width: window.innerWidth,
             hover: null,
@@ -40,12 +40,12 @@ class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
     }
     //------------------------------------------------------------------------------------------------------------------
     updateDimensions() {
-        document.handler.log("Sidebar.updateDimensions()");
+        document["handler"].log("Sidebar.updateDimensions()");
         this.setState({ width: window.innerWidth });
     }
     //------------------------------------------------------------------------------------------------------------------
     componentDidMount() {
-        document.handler.log("Sidebar.componentDidMount()");
+        document["handler"].log("Sidebar.componentDidMount()");
         this.updateDimensions();
         window.addEventListener("resize", ()=>{
             this.updateDimensions.bind(this);
@@ -56,7 +56,7 @@ class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
     }
     //------------------------------------------------------------------------------------------------------------------
     componentWillUnmount() {
-        document.handler.log("Sidebar.componentWillUnmount()");
+        document["handler"].log("Sidebar.componentWillUnmount()");
     }
     //------------------------------------------------------------------------------------------------------------------
     render() {

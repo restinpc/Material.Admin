@@ -25,7 +25,7 @@ class RightModal extends React.Component<IRightModalProps, IRightModalState> {
     //------------------------------------------------------------------------------------------------------------------
     constructor(props) {
         super(props);
-        document.handler.log("RightModal.constructor()");
+        document["handler"].log("RightModal.constructor()");
         this.renderId = 0;
         this.state = {
             selected: "properties"
@@ -39,11 +39,11 @@ class RightModal extends React.Component<IRightModalProps, IRightModalState> {
     }
     //------------------------------------------------------------------------------------------------------------------
     componentDidMount() {
-        document.handler.log("RightModal.componentDidMount()");
+        document["handler"].log("RightModal.componentDidMount()");
     }
     //------------------------------------------------------------------------------------------------------------------
     componentWillUnmount() {
-        document.handler.log("RightModal.componentWillUnmount()");
+        document["handler"].log("RightModal.componentWillUnmount()");
     }
     //------------------------------------------------------------------------------------------------------------------
     submitModal = () => {
@@ -80,11 +80,11 @@ class RightModal extends React.Component<IRightModalProps, IRightModalState> {
                                 document.getElementById(res.name).style.borderColor = "#f00";
                             }
                         }catch(e){
-                            document.handler.error("TaskList.render().regexp("+res.name+") -> "+e.message);
+                            document["handler"].error("TaskList.render().regexp("+res.name+") -> "+e.message);
                         }
                     }
                 }catch(e){
-                    document.handler.error("TaskList.render().save(click) -> "+e.message);
+                    document["handler"].error("TaskList.render().save(click) -> "+e.message);
                 }
             });
         });
@@ -99,7 +99,7 @@ class RightModal extends React.Component<IRightModalProps, IRightModalState> {
     }
     //------------------------------------------------------------------------------------------------------------------
     render() {
-        document.handler.log("RightModal.render() №"+(++this.renderId));
+        document["handler"].log("RightModal.render() №"+(++this.renderId));
         const element = document.getElementById("main-panel");
         let padding = "300px";
         if(element) {
@@ -131,13 +131,13 @@ class RightModal extends React.Component<IRightModalProps, IRightModalState> {
                     <div className="modal_content">{ details } </div>
                 </div>
                 <CustomButton bsStyle="info" className="saveButton btn-fill pull-right" onClick={()=>{
-                    document.handler.info("RightModal.CustomButton(Сохранить).click()");
+                    document["handler"].info("RightModal.CustomButton(Сохранить).click()");
                     this.submitModal();
                 }}>
                     Сохранить
                 </CustomButton>
                 <CustomButton bsStyle="danger" pullRight fill onClick={() => {
-                    document.handler.info("RightModal.CustomButton(Отмена).click()");
+                    document["handler"].info("RightModal.CustomButton(Отмена).click()");
                     if(window.confirm("Вы уверены? Все несохраненные изменения будут утеряны")) {
                         this.props.hideRightModal();
                     }

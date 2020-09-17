@@ -16,22 +16,22 @@ class ErrorList extends React.PureComponent<IErrorListProps> {
     //------------------------------------------------------------------------------------------------------------------
     constructor(props){
         super(props);
-        document.handler.log("ErrorList.constructor()");
+        document["handler"].log("ErrorList.constructor()");
         this.renderId = 0;
     }
     //------------------------------------------------------------------------------------------------------------------
     componentDidMount(){
-        document.handler.log("ErrorList.componentDidMount()");
+        document["handler"].log("ErrorList.componentDidMount()");
         setTimeout(()=>{this.props.updateParent(true)}, 0);
     }
     //------------------------------------------------------------------------------------------------------------------
     componentWillUnmount() {
-        document.handler.log("ErrorList.componentWillUnmount()");
+        document["handler"].log("ErrorList.componentWillUnmount()");
         this.props.updateParent(false);
     }
     //------------------------------------------------------------------------------------------------------------------
     render() {
-        document.handler.log("ErrorList.render() №"+(++this.renderId));
+        document["handler"].log("ErrorList.render() №"+(++this.renderId));
         return (
             <div className="content">
                 <Grid fluid>

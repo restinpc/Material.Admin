@@ -6,11 +6,11 @@
 
 export default function stateHandler({ getState }) {
   return next => action => {
-    document.handler.debug("Will dispatch action >>");
-    document.handler.debug(action);
+    document["handler"].debug("Will dispatch action >>");
+    document["handler"].debug(action);
     const returnValue = next(action);
-    document.handler.debug("Redux after dispatch >>");
-    document.handler.debug(getState());
+    document["handler"].debug("Redux after dispatch >>");
+    document["handler"].debug(getState());
     return returnValue;
   }
 }

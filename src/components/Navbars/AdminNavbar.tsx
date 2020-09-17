@@ -8,9 +8,8 @@ import * as React from "react";
 import { Navbar } from "react-bootstrap";
 import AdminNavbarLinks from "./AdminNavbarLinks";
 import "./AdminNavbar.css";
-import {IAdminNavbarProps, IAdminNavbarState} from "../../interfaces/components/AdminNavbar";
 
-class AdminNavbar extends React.Component<IAdminNavbarProps, IAdminNavbarState> {
+class AdminNavbar extends React.Component<{brandText:string}, {sidebarExists: boolean}> {
     //------------------------------------------------------------------------------------------------------------------
     constructor(props) {
         super(props);
@@ -32,7 +31,7 @@ class AdminNavbar extends React.Component<IAdminNavbarProps, IAdminNavbarState> 
             var node = document.createElement("div");
             node.id = "bodyClick";
             node.onclick = function () {
-                document.handler.info("AdminNavbar.div(bodyClick).click()");
+                document["handler"].info("AdminNavbar.div(bodyClick).click()");
                 // @ts-ignore
                 this.parentElement.removeChild(this);
                 document.documentElement.classList.toggle("nav-open");
@@ -51,7 +50,7 @@ class AdminNavbar extends React.Component<IAdminNavbarProps, IAdminNavbarState> 
                         {this.props.brandText}
                     </Navbar.Brand>
                     <Navbar.Toggle onClick={(e)=>{
-                        document.handler.info("AdminNavbar.Navbar(Toggle).click()");
+                        document["handler"].info("AdminNavbar.Navbar(Toggle).click()");
                         this.mobileSidebarToggle(e);
                     }} />
                 </Navbar.Header>

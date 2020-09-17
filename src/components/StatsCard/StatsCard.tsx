@@ -11,7 +11,7 @@ import "./StatsCard.css";
 import {dashboardCardCaption, dashboardIconBackground} from "../../variables/colors";
 
 const StatsCard: React.FunctionComponent<IStatsCardProps> = (props) => {
-    document.handler.log("StatsCard.render()");
+    document["handler"].log("StatsCard.render()");
     return (
         <div className={"card card-stats" + (props.hasBorder ? " has-border" : "")}>
             <div className="content">

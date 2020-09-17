@@ -32,18 +32,18 @@ try {
         window.history.pushState({}, "", process.env.REACT_APP_ROOT+"/dashboard");
     }
 }catch(e){
-    document.handler.error("Index.@load -> "+e.message);
+    document["handler"].error("Index.@load -> "+e.message);
 }
 //----------------------------------------------------------------------------------------------------------------------
 /* @init */
 var appLoader, history;
 try{
-    document.reduxStore = ReduxStore();
+    document["reduxStore"] = ReduxStore();
     history = createBrowserHistory();
     appLoader = new AppLoader();
     new DataSource(
         process.env.REACT_APP_API_URL,
-        document.reduxStore,
+        document["reduxStore"],
         appLoader
     );
     /* @listen */
@@ -54,15 +54,15 @@ try{
             }, 1000);
         });
     }catch(e){
-        document.handler.error("Index.@listen -> "+e.message);
+        document["handler"].error("Index.@listen -> "+e.message);
     }
     /* @react */
     try {
-        document.dataSource.initData().then((success) => {
+        document["dataSource"].initData().then((success) => {
             if(success) {
                 ReactDOM.render(
                     <div id="react">
-                        <Provider store={document.reduxStore}>
+                        <Provider store={document["reduxStore"]}>
                             <Router history={history}>
                                 <Switch>
                                     <Route path={process.env.REACT_APP_ROOT} render={props => <App {...props} />}/>
@@ -74,12 +74,12 @@ try{
                     document.getElementById(rootComponent)
                 );
             }else{
-                document.handler.throw();
+                document["handler"].throw();
             }
         });
     }catch(e){
-        document.handler.error("Index.@react -> "+e.message);
+        document["handler"].error("Index.@react -> "+e.message);
     }
 }catch(e){
-    document.handler.error("Index.@init -> "+e.message);
+    document["handler"].error("Index.@init -> "+e.message);
 }

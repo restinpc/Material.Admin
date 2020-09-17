@@ -13,20 +13,20 @@ class ModalComponent extends React.PureComponent<IModalProps, IModalState>{
     //------------------------------------------------------------------------------------------------------------------
     constructor(props){
         super(props);
-        document.handler.log("ModalComponent.constructor()");
+        document["handler"].log("ModalComponent.constructor()");
         this.renderId = 0;
     }
     //------------------------------------------------------------------------------------------------------------------
     componentDidMount(){
-        document.handler.log("ModalComponent.componentDidMount()");
+        document["handler"].log("ModalComponent.componentDidMount()");
     }
     //------------------------------------------------------------------------------------------------------------------
     componentWillUnmount() {
-        document.handler.log("ModalComponent.componentWillUnmount()");
+        document["handler"].log("ModalComponent.componentWillUnmount()");
     }
     //------------------------------------------------------------------------------------------------------------------
     render(){
-        document.handler.log("ModalComponent.render() №"+(++this.renderId));
+        document["handler"].log("ModalComponent.render() №"+(++this.renderId));
         return (
             <div className="Modal">
                 <div className="modal-wrapper">
@@ -34,7 +34,7 @@ class ModalComponent extends React.PureComponent<IModalProps, IModalState>{
                         <div className="modal-data">
                             <i className="pe-7s-close icon"
                                onClick={() => {
-                                   document.handler.info("ModalComponent.icon(Закрыть окно).click()")
+                                   document["handler"].info("ModalComponent.icon(Закрыть окно).click()")
                                    if(window.confirm("Вы уверены? Все несохраненные изменения будут утеряны")) {
                                        this.props.hideModal();
                                    }
