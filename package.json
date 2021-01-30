@@ -1,5 +1,6 @@
 {
-  "name": "Material.App",
+  "name": "Material.Admin",
+  "homepage": "/material.admin",
   "dependencies": {
     "@babel/core": "7.4.3",
     "@svgr/webpack": "4.1.0",
